@@ -1,7 +1,7 @@
 import MainMenu from "./menu";
 import SocialIcon from "./social-icon";
 
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import classNames from "classnames";
 
 export default function Background({}) {
