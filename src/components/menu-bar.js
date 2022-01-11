@@ -8,7 +8,7 @@ export default function MenuBar() {
 
     return (
         <>
-            <a className="fixed top-6 right-6 cursor-pointer" onClick={() => setOffcanvas(true)}>
+            <a className="relative top-6 right-6 cursor-pointer" onClick={() => setOffcanvas(true)}>
                 <svg className="w-9 lg:w-11" width="57" height="40" viewBox="0 0 57 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="3" y1="3" x2="22" y2="3" stroke="black" strokeWidth="6" strokeLinecap="round"/>
                     <line x1="3" y1="20" x2="54" y2="20" stroke="black" strokeWidth="6" strokeLinecap="round"/>

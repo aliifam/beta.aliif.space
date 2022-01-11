@@ -2,7 +2,7 @@ export default function ContactForm() {
     return (
         <>
         <h1 className="font-bold font-serif text-5xl sm:text-6xl">Contact Me</h1>
-        <p className="font-serif text-lg leading-none">fill the form below and click send to go to my mail box.</p>
+        <p className="font-serif lg:text-lg leading-none">fill the form below and click send to go to my mail box.</p>
         <form action="" method="post" className="font-sans mt-4">
             <label className="block" htmlFor="nama">Name :</label>
             <input className="h-11 w-full lg:w-7/12 border-2 border-gray-300 rounded p-2 mb-3" type="text" name="nama" id="" placeholder="your name"/>
