@@ -12,7 +12,7 @@ export default function ContactPage() {
         </Head>
         <div className="bg-line h-screen flex">
             <div className="container max-w-4xl h-screen mx-auto flex items-center">
-                <div className="container flex flex-col mx-4 lg:mx-0" data-aos="fade-up" data-aos-delay="200">
+                <div className="container flex flex-col mx-4 lg:mx-0" data-aos="fade-down" data-aos-delay="200">
                 <ContactForm/>
                 </div>
             </div>
