@@ -9,7 +9,7 @@ export default function ContactForm() {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    const res = await fetch("https://aliif.space/api/submit-form", {
+    const res = await fetch("http://aliif.space/api/submit-form", {
       method: 'POST',
       body: JSON.stringify({ name, email, message }),
     });
@@ -20,7 +20,7 @@ export default function ContactForm() {
       setEmail("")
       setMessage("")
     } else {
-      toast("sorry but error", { type: "error" });
+      toast("sorry error", { type: "error" });
       console.log('error')
     }
   };
