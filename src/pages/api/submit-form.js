@@ -4,7 +4,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const notion = new Client({
-  auth: process.env.Notion_API_KEY,
+  auth: process.env.NOTION_TOKEN,
 });
 
 export default async function handler(req, res) {
