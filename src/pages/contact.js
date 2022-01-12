@@ -1,6 +1,7 @@
 import ContactForm from "../components/contact-form";
 import MenuBar from "../components/menu-bar";
 import Head from "next/head";
+import MailButton from "../components/mail-abs";
 
 export default function ContactPage() {
     return (
@@ -17,6 +18,7 @@ export default function ContactPage() {
                 </div>
             </div>
             <MenuBar/>
+            <MailButton/>
         </div>
         </>
     )

@@ -36,7 +36,7 @@ export default function ContactForm() {
       <p className="font-serif lg:text-lg leading-none">
         fill the form below and click send to go to my mail box.
       </p>
-      <form onSubmit={submitForm}>
+      <form className="mt-6" onSubmit={submitForm}>
         <label className="block" htmlFor="name">
           Name :
         </label>
@@ -93,7 +93,7 @@ export default function ContactForm() {
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
           <span className={classNames(loading ? "" : "hidden")}>Sending</span>
-          <span className={classNames(loading ? "hidden" : "")}>Send</span>
+          <span className={classNames(loading ? "hidden" : "")}>Send &rarr;</span>
         </button>
       </form>
     </>
