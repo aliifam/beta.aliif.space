@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classNames from "classnames";
 
 import toast from "react-hot-toast";
 
@@ -6,9 +7,11 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const submitForm = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const res = await fetch("/api/submit-form", {
       method: 'POST',
       body: JSON.stringify({ name, email, message }),
@@ -16,11 +19,13 @@ export default function ContactForm() {
 
     if (res.status === 201) {
       toast("Message sent", { type: "success" });
+      setLoading(false);
       setName("")
       setEmail("")
       setMessage("")
     } else {
       toast("sorry error", { type: "error" });
+      setLoading(false);
       console.log('error')
     }
   };
@@ -70,11 +75,25 @@ export default function ContactForm() {
           onChange={(e) => setMessage(e.target.value)}
           required
         />
+        {/*<button type="submit" class="flex items-center bg-gray-500 text-white hover:bg-purple-500 px-4 py-2 rounded text-sm w-auto">
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Cancel
+          </button>*/}
+
         <button
-          className="bg-black text-white p-2 w-20 lg:w-2/12 rounded font-bold text-lg mt-4"
+          className="flex items-center bg-black text-white px-4 py-2 w-fit rounded font-bold text-lg mt-4"
           type="submit"
+          disabled={loading}
         >
-          Send
+          <svg className={classNames("animate-spin -ml-1 mr-3 h-5 w-5 text-white", loading ? "" : "hidden")} viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span className={classNames(loading ? "" : "hidden")}>Sending</span>
+          <span className={classNames(loading ? "hidden" : "")}>Send</span>
         </button>
       </form>
     </>
