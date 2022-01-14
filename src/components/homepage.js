@@ -18,6 +18,8 @@ export default function Homepage() {
             <meta property="twitter:image" content="https://cdn.statically.io/og/theme=dark/Aliif%20Arief's%20Portfolio.jpg" />
             <meta property="twitter:title" content="Aliif Arief's Homepage" /><meta name="twitter:site" content="@lifrief" />
             <meta name="twitter:creator" content="@lifrief" /> 
+
+            <script async defer data-website-id="5d445dc6-dfc1-42f9-a54a-7b351edefd9d" src="https://umami.aliif.space/umami.js"></script>
         </Head>
         <Background />
         </>
